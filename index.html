@@ -7,8 +7,8 @@
     <title>Vim & Vigour</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/styles.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
 </head>
+
 
 <body style="color: var(--bs-gray-dark);background: rgb(255,255,255);font-family: Times New Roman;">
     <nav class="navbar navbar-light navbar-expand-lg navigation-clean" style="background: rgba(198,191,191,0.12);">
@@ -23,23 +23,41 @@
     </nav>
     <h3 style="text-align: center;background: rgba(198,191,191,0.12);">Welcome to the new you.</h3>
     <p class="text-center" style="text-align: center;padding: 19px;background: rgba(198,191,191,0.12);margin: -8px;"><br><br><em>Vim &amp; Vigour is a service that presents cheap and healthy meals that are easy to make, every week. View this week’s recipes and pick something you like. It’s all free.</em><br><br></p>
+    <h3 style="text-align: center;background: rgba(255, 255, 255, 0.12);"> Countdown until new recipes!</h3>
+    <h3 id="countdown" style="text-align: center;background: rgba(255, 255, 255, 0.12);"></h3>
+    <script>
+        var countDownDate = new Date("March 20, 2022 14:00:00").getTime();
+        var x = setInterval(function() {
+            var today = new Date().getTime();
+            var distance = countDownDate - today;
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+            document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m ";
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "New Meals!";
+            }
+        }, 1000);
+    </script>
     <div class="col-sm-6 col-md-4 col-lg-3 col-xxl-3 offset-lg-2 offset-xxl-5 text-center item" style="height: 561.462px;margin: 14px;transform: perspective(0px) translate(1000px);">
         <a href="assets/img/desk.jpg"></a>
         <h3 class="text-center visible">Monday</h3><small class="text-center">Kiwi Cereal<br><br></small><img class="img-fluid" src="assets/img/img-05.jpg"><a class="btn btn-success" role="button" href="monday.html" style="font-family: 'Times new roman', sans-serif;color: var(--bs-white);margin: 18px;">Make it.</a></div>
     <div class="col-sm-6 col-md-4 col-lg-3 offset-md-0 offset-lg-3 offset-xxl-5 text-center item" style="height: 551.45px;margin: 52px;transform: translate(41px);">
-        <h3 class="text-center visible" style="font-family: Times New Roman;">Tuesday</h3><small>Oat pancakes<br><br></small><img class="img-fluid" src="assets/img/img-02.jpg"><a class="btn btn-success" role="button" href="tuesday.html" style="font-family: 'Times new roman', sans-serif;color: var(--bs-white);margin: 18px;">Make it.</a></div>
+        <h3 class="text-center visible" style="font-family: Times New Roman;">Tuesday</h3><small>Oat pancakes<br><br></small><img class="img-fluid" alt="" src="assets/img/img-02.jpg"><a class="btn btn-success" role="button" href="tuesday.html" style="font-family: 'Times new roman', sans-serif;color: var(--bs-white);margin: 18px;">Make it.</a></div>
     <div class="col-sm-6 col-md-4 col-lg-3 text-center item" style="margin: 52px;transform: perspective(0px) translate(952px);height: 573.1px;">
         <a href="assets/img/building.jpg"></a>
         <h3 class="text-center">Wednesday</h3><small>Fruity Breakfast<br><br></small><img class="img-fluid" src="assets/img/img-06.jpg" style="border-style: hidden;"><a class="btn btn-success" role="button" href="wednesday.html" style="font-family: 'Times new roman', sans-serif;color: var(--bs-white);margin: 18px;">Make it.</a></div>
     <div class="col-sm-6 col-md-4 col-lg-3 offset-md-0 offset-lg-3 offset-xxl-5 text-center item" style="height: 700.45px;margin: 52px;transform: translate(41px);">
-        <h3 class="text-center visible" style="font-family: Times New Roman;">Thursday</h3><small>Plum Casserole<br><br></small><img class="img-fluid" src="assets/img/img-11.jpg"><a class="btn btn-success" role="button" href="thursday.html" style="font-family: 'Times new roman', sans-serif;color: var(--bs-white);margin: 18px;">Make it.</a></div>
-    <footer class="footer-basic" style="background: rgb(39,168,137);height: 255.3px;color: rgb(101,102,102);">
+        <h3 class="text-center visible" style="font-family: Times New Roman;">Thursday</h3><small>Plum Casserole<br><br></small><img class="img-fluid" alt="" src="assets/img/img-11.jpg"><a class="btn btn-success" role="button" href="thursday.html" style="font-family: 'Times new roman', sans-serif;color: var(--bs-white);margin: 18px;">Make it.</a></div>
+    <footer class="footer-basic" style="background: rgb(39,168,137);color: rgb(101,102,102);">
         <ul class="list-inline">
             <li class="list-inline-item"><a href="index.html">Home</a></li>
             <li class="list-inline-item"><a href="about.html">About</a></li>
         </ul>
         <a href="https://tree-nation.com/profile/impact/simen-walle#co2" target="_blank" style="position:relative;cursor:pointer;display:block;z-index:999;">
-            <img src="https://tree-nation.com/images/tracking/label-co2-website-white-en.png" alt="Net Zero Website" style="width:157px;height:auto;">
+            <img src="https://tree-nation.com/images/tracking/label-co2-website-white-en.png" style="width:157px;height:auto;">
         </a>
         <script src="https://tree-nation.com/js/track.js"></script>
         <script>
@@ -47,7 +65,6 @@
         </script>
         <p class="copyright" style="color: rgb(105,94,94);">Vim &amp; Vigour© 2022</p>
     </footer>
-    <script src="assets/js/script.min.js"></script>
 </body>
 
 </html>
